@@ -1,0 +1,96 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(../images/fundo.jpg);
+    background-size: 100%;
+    user-select: none;
+}
+
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+    width: 70%;
+    height: 100%;
+    gap: 5%;
+}
+
+h2 {
+    font-size: 2em;
+    color: #542C0A;
+    text-transform: uppercase;
+    font-family: "MedievalSharp", cursive;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.reset {
+    width: 192px;
+    height: 38px;
+    box-shadow: inset #776241 2px;
+    color: #463D15;
+    background-color: #CDA05A;
+    border: #776241 solid 2px;
+    border-radius: 4px;
+    font-size: 22px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: "MedievalSharp", cursive;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.reset:focus {
+    color: #0F0D07;
+    background-color: #9E7636;
+}
+
+.game {
+    width: 200%;
+    min-width: 40%; 
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px auto;
+    row-gap: 20px;
+    column-gap: 80px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item {
+    position: relative;
+    width: 150%;
+    max-width: 300%;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 3em;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url(../images/fundo.jpg);
+    /* opacity: 0.85; */
+    transition: 0.6s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.boxOpen::after,
+.boxMatch::after {
+    transform: rotateY(180deg);
+}
