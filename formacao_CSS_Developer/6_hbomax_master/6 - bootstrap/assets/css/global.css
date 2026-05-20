@@ -1,0 +1,689 @@
+/* Fontes de grafia */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap");
+
+/*---------------------------------------------------------------------*/
+:root {
+    --primary-color: #020228;
+    --secondary-color: #ff00e5;
+    --tertiary-color: #b535f6;
+    --btn-bg-color-gradient: linear-gradient(45deg,
+            #9b34ef 0%,
+            #490cb0 20%,
+            transparent 50%);
+    --btn-link-bg-color: #fff;
+    --btn-link-color: #000;
+    --card-bg-color: linear-gradient(0deg, transparent, #3b1e63);
+    --divider-bg-color: linear-gradient(90deg,
+            #5516ba,
+            rgba(255, 0, 229, 0.5) 80%);
+    --nav-bg-color: rgba(0, 0, 0, 0.3);
+    --text-color: #fff;
+    --link-color: #9e86ff;
+    --form-bg-color: rgba(211, 211, 211, 0.06);
+    --form-field-bg-color: rgba(0, 0, 0, 0.2);
+    --form-field-border: 1px solid rgba(255, 255, 255, 0.7);
+    --form-field-placeholder: rgba(255, 255, 255, 0.7);
+    --form-field-error: rgb(255, 76, 76);
+    scroll-behavior: smooth;
+}
+
+/*--------------- Custom Scroll ---------------*/
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--tertiary-color);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+* {
+    font-family: "Raleway", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--primary-color);
+    width: 99vw;
+    height: 100vh;
+}
+
+main {
+    width: 100%;
+}
+
+/*------------------------ BUTTON ---------------------------*/
+button {
+    background: var(--btn-bg-color-gradient); 
+    letter-spacing: 2px;
+    border-radius: 30px;
+    border: none;
+}
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin: 0;
+}
+p {
+  color: white;
+}
+
+/* ----------- Gradiente animação ------------ */
+header {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  perspective: 300px;
+  font-family: 'Quicksand', cursive;
+}
+
+header.div {
+  position: absolute;
+  background: var(--btn-bg-color-gradient);
+  border-radius: 50%;
+  width: 250px;
+  height: 300px;
+  animation: example 5s infinite alternate;
+  filter: blur(100px);
+}
+
+@keyframes example {
+  0% {
+    transform: rotateY(30deg) rotate(-25deg) translateZ(100px);
+  }
+  25% {
+    transform: rotateY(-30deg) translateZ(100px);
+  }
+  50% {
+    transform: rotateX(-50deg) translateZ(-100px);
+  }
+  75% {
+    transform: rotateX(-50deg) translateZ(-100px);
+  }
+  100% {
+    transform: rotateX(20deg) translateZ(0);
+  }
+}
+
+/* ------------------------ button:hover ------------------------ */
+.card button {
+    width: 450px;
+    padding: 1rem;
+    font-size: .9rem;
+    border-radius: 2rem;
+    font-weight: 300;
+    border: var(#00000000) solid 3px;
+    letter-spacing: 4px;
+}
+
+.card_primeiro {
+    animation-name: change-card-segundo;
+    animation: change-card 5s infinite;
+    cursor: pointer;
+}
+.card_segundo {
+    animation-name: change-card-primeiro;
+    animation: change-card 5s infinite;
+    cursor: pointer;
+}
+
+@keyframes change-card-primeiro {
+    0% {
+        transform: rotateX(0deg) rotateY(-55deg)  translate(-100px);
+    }
+    50% {
+        transform: rotateX(0deg) rotateY(-45deg)  translate(-100px);
+    }
+    100% {
+        transform: rotateX(0deg) rotateY(-75deg)  translate(-50px);
+    }
+}
+@keyframes change-card-segundo {
+    0% {
+        transform: rotateX(0deg) rotateY(55deg)  translate(100px);
+    }
+    50% {
+        transform: rotateX(0deg) rotateY(45deg)  translate(100px);
+    }
+    100% {
+        transform: rotateX(0deg) rotateY(75deg)  translate(200px);
+    }
+}
+
+.card button:hover {
+    border: var(--secondary-color) solid 3px;
+    background-color:  var(--btn-link-color);
+    transition: 2s;
+}
+
+
+ /* --------   320px < 768px   -------- */
+/* --------------- NAV --------------- */
+nav {
+    unicode-bidi: isolate;
+}
+.navbar {
+    width: 100%;
+    padding: 12px 16px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--nav-bg-color);
+    z-index: 1;
+}
+.nav__menu {
+    width: 16rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.navbar-brand img{
+    width: 120px;
+    padding: 6px;
+}
+
+/*:::::::::::::     Parte Principal     ::::::::::::::*/
+.header__container div h1 {
+    font-weight: bold;
+    font-size: 3rem;
+}
+.header__container div h3 {
+    font-size: 2rem;
+}
+.header__container .container_assinatura {
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+.header__container .container_preco {
+    font-size: 42px;
+    font-weight: bold;
+}
+.ass {
+    display: flex;
+    width: 280px;
+}
+.assine__agora_animacao {
+    background: #B535F6;
+    border-radius: 4rem;
+    font-size: .75rem;
+    height: 2rem;
+    font-weight: 700;
+    width: 10rem;
+    color: white;
+}
+.assine__agora_animacao:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+  background: #000;
+  transition: 2s;
+}
+
+.assine__agora {
+  background: var(--divider-bg-color);
+  border: var(#02022800) solid 1px;
+  animation: wiggle 2.2s linear infinite;
+  font-size: 1.5rem;
+}
+.assine__agora:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+  border: var(--secondary-color) solid 1px;
+  background: #000;
+  transition: 2ms;
+}
+.button__enter {
+    font-weight: 600;
+    font-size: 12px;
+}
+
+@keyframes wiggle {
+  0%, 10% {
+    transform: rotate(0);
+  }
+  15% {
+    transform: rotate(-15deg);
+  }
+  20% {
+    transform: rotate(10deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  30% {
+    transform: rotate(10deg);
+  }
+  35% {
+    transform: rotate(-10deg);
+  }
+  40%, 100% {
+    transform: rotate(0);
+  }
+}
+
+/* --------------- HEADER --------------- */
+header {
+    font-family: "Raleway";
+}
+header p {
+    font-weight: 100;
+}
+header, h1 {
+    font-weight:bolder;
+    font-size: 46px;
+}
+header .container {
+    width: 75%;
+}
+header .container .preco {
+    font-weight: bold;
+}
+.text-pequeno {
+    font-size: 16px;
+    width: 14.5rem;
+    margin: 0 auto;
+}
+.mes {
+    font-size: 16px;
+    font-weight: 300;
+    margin-left: 10px;
+}
+.assine__entrar {
+    font-size: .8rem;
+    letter-spacing: .2rem;
+}
+.icones {
+    margin-bottom: 40px;
+}
+
+.tituloPlanos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tituloPlanos h3 {
+    width: 8rem;
+
+}
+.tituloPlanos p {
+    display: flex;
+    width: 20rem;
+}
+
+/* --------------- Planos --------------- */
+#planos {
+    background: url(../images/background-movies-series.png) no-repeat;
+    background-size: cover;
+    position: relative;
+    margin: 10rem auto 0 auto;
+    padding: 24px;
+    text-align: center;
+}
+
+.conheca, .text_descubre {
+    max-width: 80rem;
+    margin: 0 auto;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/* --------------- SeriesCards --------------- */
+.containerPlanos {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    perspective-origin: top;
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url(../images/background-movies-series.png);
+    background-size: cover;
+}
+.planosCard {
+    align-items: center;
+    border-radius: 8px;
+    margin: 0 auto;
+    background: var(--card-bg-color);
+    min-height: 500px;
+}
+
+
+div.card {
+    background: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 2rem;
+    width: 30rem;
+    display: flex;
+    margin: 2rem;
+    max-height: 600px;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 1s ease-in-out;
+}
+div.card ul li {
+    font-size: 1.25rem;
+    font-weight: 400;
+    font-family: "Raleway";
+    margin-bottom: 1.3rem;
+    text-align: left;
+}
+.containerPlanos__buttonEscolha {
+    margin: 0 auto;
+}
+
+.planolist ul {
+    margin-bottom: 5rem;
+}
+
+.tituloPlanos {
+    width: 4rem;
+    margin: 0px;
+}
+.tituloPlanos ul li {
+    font-size: 1rem;
+}
+.tituloPlanos p {
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+.mes_rosa {
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--text-color);
+}
+#planos button {
+    border-radius: 32px;
+}
+
+.series h2 {
+    color: #fff;
+}
+
+/* ------------------------------- */
+.container-fluid {
+    margin: 10rem 0rem 5rem;
+    width: 200rem;
+    background: #ff00e5;
+}
+.containerIMG {
+    width: 36rem;
+    margin: .8rem auto;
+    border: var(--secondary-color) 
+}
+.containerIMG img:hover {
+    width: 18rem;
+    margin: 0rem .8rem .8rem ;
+    border: var(--secondary-color) 
+}
+
+/* --------------- FOOTER --------------- */
+footer {
+    width: 100%;
+    padding: 2rem;
+    height: 14rem;
+    margin: 0 auto;
+    text-align: center;
+    color: #9E86FF;
+}
+footer a {
+    margin: 3rem 1rem;
+    font-weight: 600;
+    color: #9E86FF;
+    text-decoration: none;
+}
+footer div a img {
+    margin-top: 64px;
+}
+.container_footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+.container_footer p {
+    margin-bottom: 7px;
+    font-size: .9rem;
+    letter-spacing: 0.1rem;
+}
+.container_footer_span {
+    font-size: .75rem;
+    color: #9E86FF;
+}
+
+
+
+
+@media (min-width: 320px) {
+div.card {
+    width: 100%;
+    padding: 1.2rem;
+}
+div.card ul li {
+    font-size: 16px;
+    }
+div.card button {
+    width: 90%;
+}
+.card_primeiro button {
+    margin-top: 8rem;
+}
+
+div.planolist ul li {
+    font-size: 1rem;
+    font-weight: 500;
+}
+div.planolist ul {
+    margin-bottom: 1rem;
+}
+
+header {
+    margin-top: 10rem;
+    font-family: "Raleway";
+}
+#planos {
+    padding: 0px;
+}
+.container-fluid {
+    display: none;
+}
+
+div.container-fluid-mobile {
+    width: 8rem;
+    margin: 0px;
+}
+section.container-fluid-mobile h1 {
+    width: 18rem;
+    margin-top: 20rem;
+}
+div.containerIMG-mobile {
+    margin-top: 10rem;
+    width: 10rem;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+article.containerIMG-mobile {
+    display: inline-block;
+}
+div.containerIMG-mobile {
+    display: flex;
+    width: 21rem;
+    margin: .6rem;
+}
+.containerIMG-mobile img {
+    width: 17rem;
+    margin: 1rem;
+}
+
+div footer {
+    margin:6rem;
+}
+
+}
+    
+@media (min-width: 375px) {
+#planos {
+    padding: 0px;
+}
+.container-fluid-mobile {
+    width: 25rem;
+}
+.container-fluid-mobile h1 {
+    width: 23rem;
+}
+.containerIMG-mobile {
+    width: 20rem;
+    margin: .6rem;
+}
+.containerIMG-mobile img {
+    width: 20rem;
+    margin: .8rem;
+}
+.containerPlanos {
+    gap: 40px;
+}
+
+.card button {
+    width: 300px;
+}
+
+footer.footer {
+    padding: 1rem;
+}
+
+}
+
+
+@media (min-width: 425px) {
+#planos {
+    padding: 2px;
+    display: flex;
+    flex-wrap: wrap;
+} 
+.container-fluid-mobile {
+    width: 26rem;
+}
+.containerIMG {
+    width: 16rem;
+    margin: .6rem;
+}
+.containerIMG img {
+    width: 22rem;
+    margin: .8rem;
+}
+.containerPlanos {
+    gap: 40px;
+}
+
+div.card {
+    max-width: 600px;
+    padding: 1.2rem;
+}
+div.card ul li {
+    font-size: 16px;
+    }
+div.card button {
+    width: 90%;
+}
+div.card ul li {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+}
+
+
+@media (min-width: 768px) {
+.containerPlanos {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.tituloPlanos h3 {
+    width: 9rem;
+}
+.tituloPlanos p {
+    display: flex;
+    width: 6em;
+    padding-right: 1rem;
+}
+.containerIMG {
+    margin: 0 auto
+}
+.containerIMG img {
+    width: 20rem;
+    margin: .8rem;
+}
+.container-fluid-mobile {
+    display: none;
+}
+.container-fluid {
+    display: inherit;
+}
+
+.container_footer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem;
+}
+
+div.card p{
+    font-size: 2rem;
+}
+
+}
+
+@media (min-width: 1024px) {
+.tituloPlanos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+.containerIMG img:hover {
+    width: 18rem;
+    margin: 0rem .8rem .8rem ;
+}
+.containerIMG {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 77rem;
+}
+.containerIMG img {
+    width: 22rem;
+    margin: 1.5rem;
+}
+.containerIMG img:hover {
+    width: 23rem;
+    margin: 0rem 1rem 1rem ;
+}
+}
+
+@media (min-width: 1440px) {
+    /* --------------- FILMES --------------- */
+
+.containerIMG {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 77rem;
+}
+.containerIMG img {
+    width: 22rem;
+    margin: 1.5rem;
+}
+.containerIMG img:hover {
+    width: 23rem;
+    margin: 0rem 1rem 1rem ;
+}
+}
